@@ -1,0 +1,75 @@
+create database book_inventory
+
+use book_inventory
+
+
+-- Books Table
+CREATE TABLE IF NOT EXISTS `book_inventory`.`books` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `author` VARCHAR(255) NULL DEFAULT NULL,
+  `category` VARCHAR(255) NULL DEFAULT NULL,
+  `name` VARCHAR(255) NULL DEFAULT NULL,
+  `price` INT NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 10
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+--Admin Table
+CREATE TABLE IF NOT EXISTS `book_inventory`.`admin` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `password` VARCHAR(255) NULL DEFAULT NULL,
+  `username` VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 3
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- Review Table
+
+CREATE TABLE IF NOT EXISTS `book_inventory`.`review` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `bookname` VARCHAR(255) NULL DEFAULT NULL,
+  `name` VARCHAR(255) NULL DEFAULT NULL,
+  `rating` INT NOT NULL,
+  `review` VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+--User Details
+
+CREATE TABLE IF NOT EXISTS `book_inventory`.`user_details` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `address` VARCHAR(255) NULL DEFAULT NULL,
+  `email` VARCHAR(255) NULL DEFAULT NULL,
+  `firstname` VARCHAR(255) NULL DEFAULT NULL,
+  `lastname` VARCHAR(255) NULL DEFAULT NULL,
+  `password` VARCHAR(255) NULL DEFAULT NULL,
+  `phone` BIGINT NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 4
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+
+
+-- Queries
+
+select * from books;
+select * from user_details;
+select * from admin;
+select * from review;
+
+
+
+
